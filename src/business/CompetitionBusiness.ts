@@ -32,7 +32,26 @@ export default class CompetitionBusiness {
         const result = await this.competitionDatabase.insertCompetition(competition)
         
         return result;
+    }
 
+    // async getCompetitionById (competitionId: string) {
+    //     if(!competitionId) {
+    //         throw new BaseError("Informe o Id da competição", 400)
+    //     }
+
+    //     const result = await this.competitionDatabase.getCompetitionById(competitionId)
+
+    //     return result
+    // }
+
+    async updateStatusCompetitionToFinished (competitionId: string) {
+        if(!competitionId) {
+            throw new BaseError("Informe o ID da competição", 400)
+        }
+
+        const result = await this.competitionDatabase.updateStatusCompetitionToFinished(competitionId)
+
+        return result
     }
 
 }
