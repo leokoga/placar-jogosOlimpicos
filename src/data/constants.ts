@@ -1,3 +1,3 @@
 export const competitionsTableName = "competions"
 
-export const results = "results"
+export const resultsTableName = "results"

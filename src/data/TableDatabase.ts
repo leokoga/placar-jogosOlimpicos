@@ -1,5 +1,5 @@
 import { BaseDatabase } from "./BaseDatabase";
-import { competitionsTableName, results } from "./constants";
+import { competitionsTableName, resultsTableName } from "./constants";
 
 const printError = (error: any) => {
     console.log(error.sqlMessage || error.message);
@@ -14,7 +14,7 @@ export default class TableDatabase extends BaseDatabase {
                 status ENUM('in_progress','finished') DEFAULT 'in_progress'
             );
             
-            CREATE TABLE IF NOT EXISTS ${results} (
+            CREATE TABLE IF NOT EXISTS ${resultsTableName} (
                 id VARCHAR(64) NOT NULL PRIMARY KEY,
                 competition VARCHAR(64) NOT NULL,
                 athlete VARCHAR(255) NOT NULL,
