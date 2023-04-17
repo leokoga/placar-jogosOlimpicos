@@ -12,3 +12,8 @@ export interface CompetitionResultsInputDTO {
     value: number,
     metric: string
 }
+
+export interface CompetitionInputDTO {
+    name: string
+}
+

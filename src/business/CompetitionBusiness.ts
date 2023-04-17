@@ -1,15 +1,23 @@
-import CompetitionDatabase from "../data/CompetitionDatabase";
+// import CompetitionDatabase from "../data/CompetitionDatabase";
 import { BaseError } from "../error/BaseError";
 import { CompetitionDTO } from "../model/Competition";
-import { IdGenerator } from "../services/idGenerator";
+// import { IdGenerator } from "../services/idGenerator";
+import { CompetitionRepository } from "./CompetitionRepository";
+import { IIdGenerator } from "./ports";
 
 export default class CompetitionBusiness {
 
-    private competitionDatabase: CompetitionDatabase;
+    // private competitionDatabase: CompetitionDatabase;
 
-    constructor() {
-        this.competitionDatabase = new CompetitionDatabase
-    };
+    // constructor() {
+    //     this.competitionDatabase = new CompetitionDatabase
+    // };
+
+
+    constructor(
+        private competitionDatabase: CompetitionRepository,
+        private idGenerator: IIdGenerator
+        ){}
 
     async insertCompetition (body: any) {
         const competitionDTO: CompetitionDTO = {
@@ -21,7 +29,7 @@ export default class CompetitionBusiness {
             throw new BaseError ("Preencha todos os campos", 400);
         };
 
-        const randomId = new IdGenerator().generateId();
+        const randomId = this.idGenerator.generateId;
 
         const competition = {
             id: randomId,
