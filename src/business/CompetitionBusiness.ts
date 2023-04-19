@@ -1,18 +1,9 @@
-// import CompetitionDatabase from "../data/CompetitionDatabase";
 import { BaseError } from "../error/BaseError";
 import { CompetitionDTO } from "../model/Competition";
-// import { IdGenerator } from "../services/idGenerator";
 import { CompetitionRepository } from "./CompetitionRepository";
 import { IIdGenerator } from "./ports";
 
 export default class CompetitionBusiness {
-
-    // private competitionDatabase: CompetitionDatabase;
-
-    // constructor() {
-    //     this.competitionDatabase = new CompetitionDatabase
-    // };
-
 
     constructor(
         private competitionDatabase: CompetitionRepository,
@@ -41,16 +32,6 @@ export default class CompetitionBusiness {
         
         return result;
     }
-
-    // async getCompetitionById (competitionId: string) {
-    //     if(!competitionId) {
-    //         throw new BaseError("Informe o Id da competição", 400)
-    //     }
-
-    //     const result = await this.competitionDatabase.getCompetitionById(competitionId)
-
-    //     return result
-    // }
 
     async updateStatusCompetitionToFinished (competitionId: string) {
         if(!competitionId) {
