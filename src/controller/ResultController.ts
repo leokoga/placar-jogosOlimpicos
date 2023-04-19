@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
 import ResultBusiness from "../business/ResultBusiness";
-import { CompetitionInputDTO } from "../model/Results";
-import { BaseError } from "../error/BaseError";
 
 export default class ResultController {
 
@@ -22,23 +20,6 @@ export default class ResultController {
             };
         };
     };
-
-    // async findCompetition(req: Request, res: Response) {
-    //     try {
-
-    //         const resultBusiness = new ResultBusiness()
-
-    //       const input: CompetitionInputDTO = {
-    //         name: req.query.name as string
-    //       }
-    
-    //      const result = await resultBusiness.findCompetition(input)
-    
-    //       res.status(200).send({ result });
-    //     } catch (error: any) {
-    //       res.status(400).send({ error: error.message });
-    //     }
-    //   }
 
     async getAllResultsByCompetitionId(req: Request, res:Response){
         try{
