@@ -33,6 +33,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 <h2 id="link">:link: Links Importantes</h2>
 <br><a href="https://documenter.getpostman.com/view/21113707/2s93Xzw24X" target="_blank">Documentação Postman</a></br>
+<br><a href="https://placar-jogos-olimpicos-vercel.vercel.app/" target="_blank">Deploy</a></br>
 <br><a href="https://github.com/estantevirtual/teste_ev" target="_blank">Case legado de referência</a></br>
 
 <h2 id="requisitos">:leftwards_arrow_with_hook: Pré-requisitos</h2>
